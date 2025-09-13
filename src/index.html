@@ -10,10 +10,72 @@
 </head>
 
 <body>
+  <header class="header">
+    <div class="header-content">
+      <a href="/">
+        <img src="/img/logo-cadastra.png" alt="Logo" width="auto" height="25" />
+      </a>
+      <div class="cart">
+        <img src="/img/icon.png" alt="Logo" width="auto" height="20"/>
+        <span id="cart-counter">0</span>
+      </div>
+    </div>
+  </header>
 
+  <main class="main">
+    <div class="toolbar">
+      <h1 class="h1">Blusas</h1>
+
+        <aside class="orderby">
+          <select id="sort-products">
+            <option value="" disabled selected hidden>Ordenar por:</option>
+            <option value="recent">Mais recentes</option>
+            <option value="lowest">Menor preço</option>
+            <option value="highest">Maior preço</option>
+          </select>
+        </aside>
+    </div>
+
+    <div class="content-wrapper">
+        <aside class="filter">
+          <div class="filter-group">
+            <h3>CORES</h3>
+              <div class="colors-list collapsed">
+              </div>
+            </div>
+
+          <button type="button" class="toggle-show-colors">Ver todas as cores</button>
+
+          <div class="filter-group">
+            <h3>TAMANHOS</h3>
+            <div class="size-filter">
+              <button class="size-field">P</button>
+              <button class="size-field">M</button>
+              <button class="size-field">G</button>
+            </div>       
+          </div>
+
+          <div class="filter-group">
+            <h3>FAIXA DE PREÇO</h3>
+            <div class="price-filter"></div>
+          </div>
+        </aside>
+
+        <div class="results">
+          <div class="products-container"></div>
+          <button class="load-btn" id="load-more">Carregar mais</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>CADASTRA: Implantação de E-commerce VTEX</p>
+    </div>
+  </footer>
+
+  <script src="bundle.js"></script>
 </body>
-<h1>Desafio Cadastra</h1>
-
-<script src="bundle.js"></script>
-
 </html>

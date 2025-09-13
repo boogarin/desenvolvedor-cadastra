@@ -1,0 +1,206 @@
+.mobile-filter-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  z-index: 9999;
+  transform: translateX(100%);
+  overflow-y: auto;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .drawer-header {
+    display: flex;
+    border-bottom: 1px solid $gray1;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 10;
+
+    .drawer-header-content {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+
+      h2 {
+        font-size: 28px;
+        color: $gray2;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: #000;
+      }
+    }
+  }
+
+  .filter-content {
+    padding: 1.5rem;
+
+    .filter-actions {
+      display: flex;
+      gap: 20px;
+
+      .btn {
+        flex: 1;
+        padding: 1rem;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        &.apply-btn {
+          background: $primary-color;
+          color: #fff;
+          border: none;
+          font-family: "Open Sans", "sans-serif";
+          text-transform: uppercase;
+
+          &:hover {
+            background: darken($primary-color, 10%);
+          }
+        }
+
+        &.clear-btn {
+          background: #fff;
+          color: $gray2;
+          border: 1px solid $gray2;
+          font-family: "Open Sans", "sans-serif";
+          text-transform: uppercase;
+
+          &:hover {
+            background: #e0e0e0;
+          }
+        }
+      }
+    }
+
+    .filter-dropdown {
+      margin-bottom: 1.5rem;
+
+      .dropdown-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+        cursor: pointer;
+
+        .dropdown-title {
+          font-size: 24px;
+          margin: 0;
+          letter-spacing: 5%;
+          color: $gray2;
+          font-weight: 500;
+        }
+
+        .dropdown-arrow {
+          transition: transform 0.3s ease;
+          color: $gray2;
+          font-size: 12px;
+        }
+      }
+
+      .dropdown-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding: 0;
+
+        .colors-list,
+        .price-filter {
+          padding: 1rem 0;
+
+          .form-control {
+            display: grid;
+            grid-template-columns: 1em auto;
+            gap: 1em;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          .label-checkbox {
+            font-size: 14px;
+            color: $gray2;
+          }
+
+          input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 1.15em;
+            height: 1.15em;
+            border: 2px solid #ffffff;
+            outline: 1px solid $gray1;
+            cursor: pointer;
+
+            &:checked {
+              background-color: $primary-color;
+            }
+          }
+        }
+
+        .size-filter {
+          display: grid;
+          grid-template-columns: repeat(4, 32px);
+          gap: 5px;
+          padding: 1rem 0;
+
+          .size-field {
+            height: 32px;
+            width: 32px;
+            background-color: #ffffff;
+            border: 1px solid $gray1;
+            color: $gray1;
+            cursor: pointer;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+
+            &:hover {
+              border-color: #999;
+            }
+
+            &.selected {
+              border: 1px solid $primary-color;
+              color: $black;
+            }
+          }
+        }
+      }
+
+      &.open {
+        margin-bottom: 2rem;
+
+        .dropdown-header {
+          .dropdown-arrow {
+            transform: rotate(180deg);
+          }
+        }
+
+        .dropdown-content {
+          max-height: 400px;
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+}

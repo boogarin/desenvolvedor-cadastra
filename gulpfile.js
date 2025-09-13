@@ -7,6 +7,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 const browserSync = require("browser-sync").create();
+const imagemin = require("gulp-imagemin").default;
 
 const webpackConfig = require("./webpack.config.js");
 
@@ -47,7 +48,7 @@ function styles() {
     .pipe(
       autoprefixer({
         cascade: false,
-      })
+      }),
     )
     .pipe(sourcemaps.write())
     .pipe(dest(paths.dest))
@@ -70,11 +71,11 @@ function scripts() {
           errorDetails: true,
           colors: true,
           chunks: true,
-        })
+        }),
       );
 
       resolve();
-    })
+    }),
   );
 }
 
@@ -83,20 +84,23 @@ function html() {
 }
 
 function img() {
-  return src(paths.img.src).pipe(dest(paths.dest + "/img"));
+  return src(paths.img.src)
+    .pipe(imagemin())
+    .pipe(dest(paths.dest + "/img"))
+    .pipe(browserSync.stream());
 }
 
 const build = series(clean, parallel(styles, scripts, html, img));
 const dev = () => {
   watch(paths.scripts.watch, { ignoreInitial: false }, scripts).on(
     "change",
-    browserSync.reload
+    browserSync.reload,
   );
-  watch(paths.styles.src, { ignoreInitial: false }, styles);
+  watch("src/scss/**/*.scss", { ignoreInitial: false }, styles);
   watch(paths.img.src, { ignoreInitial: false }, img);
   watch(paths.html.src, { ignoreInitial: false }, html).on(
     "change",
-    browserSync.reload
+    browserSync.reload,
   );
   server();
 };

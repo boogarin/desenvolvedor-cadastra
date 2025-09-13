@@ -1,1 +1,15 @@
-@import "reset";
+@import "base/reset";
+@import "base/base";
+@import "base/variables";
+
+@import "layout/header";
+@import "layout/footer";
+
+@import "components/cart";
+@import "components/products";
+@import "components/filters";
+@import "components/orderby";
+
+@import "components/mobileButtons";
+@import "components/mobileOrderDrawer";
+@import "components/mobileFilterDrawer";

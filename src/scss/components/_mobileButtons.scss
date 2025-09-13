@@ -1,0 +1,32 @@
+.mobile-buttons {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .mobile-orderby-btn,
+  .mobile-filter-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: $gray2;
+    font-size: 16px;
+    padding: 0.75rem;
+    border: 1px solid $gray1;
+    cursor: pointer;
+
+    &:hover {
+      background: $gray1;
+      color: #fff;
+    }
+  }
+
+  .mobile-orderby-btn {
+    border-left: none;
+  }
+}

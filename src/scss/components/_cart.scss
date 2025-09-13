@@ -1,0 +1,26 @@
+.cart {
+  position: relative;
+  display: inline-block;
+
+  img {
+    display: block;
+  }
+
+  #cart-counter {
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: $primary-color;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    text-align: center;
+  }
+}

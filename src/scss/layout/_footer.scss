@@ -1,0 +1,19 @@
+.footer {
+  background-color: $black;
+  border: none;
+  color: #fff;
+  padding: 10px 0;
+  margin-top: 50px;
+}
+
+.footer-content {
+  width: 70%;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}

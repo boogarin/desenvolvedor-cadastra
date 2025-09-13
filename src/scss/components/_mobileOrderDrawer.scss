@@ -1,0 +1,60 @@
+.mobile-order-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  z-index: 9999;
+  transform: translateX(100%);
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .drawer-header {
+    display: flex;
+    border-bottom: 1px solid $gray1;
+
+    .drawer-header-content {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+
+      h2 {
+        font-size: 28px;
+        color: $gray2;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: #000;
+      }
+    }
+  }
+
+  .drawer-buttons {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-base;
+
+    button {
+      background: none;
+      border: none;
+      padding: 1.5rem;
+      font-size: 22px;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+    }
+  }
+}
