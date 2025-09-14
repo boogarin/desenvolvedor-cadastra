@@ -8,7 +8,7 @@ Meu e-mail: guisanto@proton.me
 
 ### Dependências
 
-O projeto mantém o setup pronto fornecido na atividade, então basta ter o Node.js na versão 14 ou posterior e rodar os comandos npm install e npm start , para instalar as dependências e rodar os servidores.
+O projeto mantém o setup pronto fornecido na atividade, então basta ter o Node.js na versão 14 ou posterior e rodar os comandos `npm install` e `npm start`, para instalar as dependências e rodar os servidores.
 
 ### Objetivo
 
